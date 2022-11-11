@@ -8,7 +8,7 @@ const App = () => {
   const [value, setValue] = useState("");
   const [list, setList] = useState([]);
 
-  let list2 = 0;
+  let list2 = [];
   const onButtonClick = () => {
     //   setList([])
     //   for (let i = 1; i < Number(value) + 1; i++) {
@@ -17,10 +17,9 @@ const App = () => {
     //   }
 
     // };
-    list.push(value);
-    list2 = list.map((element, index) => {
-      return <li className="items" key={element + index} >Hello the value is {index + 1}</li>
-    })
+    for (let i = 1; i <= value; i++) {
+      list2.push(<li className="items" key={i} >Hello the value is {i}</li>);
+    }
     setList(list2);
   }
   const onInputChange = (e) => {
